@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import Card from "../components/card.astro";
+---
+
+<div class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-16">
+
+  <!-- Sección de tecnologías -->
+  <section>
+    <h1 class="text-white text-4xl font-bold mb-12 text-center">
+      Tengo experiencia en las siguientes tecnologías:
+    </h1>
+
+    <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-10">
+        <Card title="Java" image="/icons/java.png" />
+        <Card title="Laravel" image="/icons/laravel.png" />
+        <Card title="Tailwind CSS" image="/icons/tailwind.png" />
+        <Card title="PostgreSQL" image="/icons/psgrest.png" />
+        <Card title="JavaScript" image="/icons/js.png" />
+        <Card title="HTML" image="/icons/html.png" />
+        <Card title="CSS" image="/icons/css.png" />
+        <Card title="Git" image="/icons/git.png" />
+        <Card title="Supabase" image="/icons/supabase.png" />
+        <Card title="Astro" image="/icons/astro.png" />
+    </div>
+  </section>
+
+  <section>
+
+    <div class="relative bg-slate-900 py-10 px-6 overflow-hidden rounded-xl">
+
+      <div class="pointer-events-none absolute left-20 top-0 h-full w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+      <div class="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+
+      <div class="carousel-container overflow-hidden">
+        <div class="carousel-track flex items-center gap-5 animate-scroll">
+          <img src="/icons/blend.png" alt="Blend" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/krita.png" alt="Krita" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/inks.png" alt="Inkscape" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/figma.png" alt="Figma" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/godot.png" alt="Godot" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+
+          <img src="/icons/blend.png" alt="Blend" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/krita.png" alt="Krita" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/inks.png" alt="Inkscape" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/figma.png" alt="Figma" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+          <img src="/icons/godot.png" alt="Godot" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .carousel-container {
+    max-width: 70%;       /* Limita el ancho al contenedor padre */
+    margin: 0 auto;        /* Centrado horizontal */
+  }
+
+  .carousel-track {
+    display: flex;
+    width: 200%;           /* Contiene los 2 bloques del carrusel */
+    animation: scroll 20s linear infinite;
+  }
+</style>

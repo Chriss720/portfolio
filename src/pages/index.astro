@@ -1,11 +1,123 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import Card from "../components/card.astro";
+import Tecnologias from "../components/tecnologias.astro";
+import ProjectCard from "../components/proyect-card.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portfolio</title>
+  </head>
+  <body class="bg-slate-900 text-white min-h-screen flex flex-col">
+
+
+
+    <main class="flex-1 w-full mt-24"> <!-- mt-24 para compensar header fijo -->
+
+
+      <section id="about" class="max-w-6xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold mb-6 text-center">Sobre mí</h1>
+        <p class="text-lg opacity-80 text-center">
+          Aquí puedes escribir tu presentación, experiencia y objetivos.
+        </p>
+      </section>
+
+      <section id="skills" class="max-w-6xl mx-auto px-4 py-16">
+        <Tecnologias />
+      </section>
+
+      <h1 class="text-white text-4xl font-bold  text-center">Proyectos en los que he participado:</h1>
+       
+      <section id="projects" class="max-w-4xl mx-auto px-5">
+        <div class="relative flex items-center justify-center">
+
+          <div id="project-container" class="relative max-w-3xl w-full h-[28rem] flex items-center justify-center overflow-hidden px-16">
+            <div class="project-slide absolute w-[28rem] sm:w-[32rem] transition-transform duration-500">
+              <ProjectCard
+                title="SIM CLE"
+                image="/projects/cle.png"
+                description="Actualmente estoy trabajando en el desarrollo de un sistema de administración para la CLE"
+              />
+            </div>
+            <div class="project-slide absolute w-[28rem] sm:w-[32rem] transition-transform duration-500 hidden">
+              <ProjectCard
+                title="Modulo vinculación"
+                image="/projects/vin.png"
+                description="Descripción breve del Proyecto 2."
+              />
+            </div>
+          </div>
+
+          <button id="prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-slate-700 text-white px-3 py-2 rounded hover:bg-slate-600 z-10">&lt;</button>
+          <button id="next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-slate-700 text-white px-3 py-2 rounded hover:bg-slate-600 z-10">&gt;</button>
+        </div>
+      </section>
+
+
+
+    </main>
+
+
+    
+
+  <footer class="bg-slate-800 mt-16 py-5">
+      <div class="mx-auto w-full max-w-screen-xl">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+          <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contacto</h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                      <a href="https://www.linkedin.com/in/chrissmm" class=" hover:underline">Linkedin</a>
+                  </li>
+                  <li class="mb-4">
+                      <a href="https://x.com/Firedrops720" class=" hover:underline">Twitter (X)</a>
+                  </li>
+                  <li class="mb-4">
+                      <a href="https://www.facebook.com/share/1Nc4rbEJUr/" class="hover:underline">Facebook</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+
+
+    <script>
+      const slides = document.querySelectorAll("#project-container .project-slide");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      let currentIndex = 0;
+
+      function showSlide(index: number) {
+        slides.forEach((slide, i) => {
+          if(i === index){
+            (slide as HTMLElement).classList.remove("hidden");
+            (slide as HTMLElement).style.transform = "translateX(0)";
+          } else {
+            (slide as HTMLElement).classList.add("hidden");
+            (slide as HTMLElement).style.transform = "translateX(100%)";
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        });
+      }
+
+      showSlide(currentIndex);
+    </script>
+
+  </body>
+</html>

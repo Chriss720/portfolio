@@ -1,0 +1,41 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Si</title>
+  </head>
+  <body class="bg-slate-900 text-white min-h-screen flex flex-col">
+    
+    <!-- Header -->
+    <header class="bg-slate-800 shadow-md">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold hover:text-emerald-400 transition-colors">
+          MiPortfolio
+        </a>
+        <nav class="space-x-6 hidden md:flex">
+          <a href="/about" class="hover:text-emerald-400 transition-colors">Sobre mí</a>
+          <a href="/skills" class="hover:text-emerald-400 transition-colors">Habilidades</a>
+          <a href="/projects" class="hover:text-emerald-400 transition-colors">Proyectos</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main class="flex-1 w-full">
+      <slot />  <!-- Aquí se inyecta la página actual -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 mt-16">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between">
+        <p class="text-sm opacity-75">© 2025 MiPortfolio. Todos los derechos reservados.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="https://github.com/" target="_blank" class="hover:text-emerald-400 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" class="hover:text-emerald-400 transition-colors">LinkedIn</a>
+          <a href="mailto:correo@example.com" class="hover:text-emerald-400 transition-colors">Email</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
