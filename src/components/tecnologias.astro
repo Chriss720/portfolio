@@ -3,9 +3,8 @@ import "../styles/global.css";
 import Card from "../components/card.astro";
 ---
 
-<div class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-16">
+<div class="bg-slate-800 max-w-6xl mx-auto border rounded-lg border-slate-700 px-4 py-16 flex flex-col gap-16">
 
-  <!-- Sección de tecnologías -->
   <section>
     <h1 class="text-white text-4xl font-bold mb-12 text-center">
       Tengo experiencia en las siguientes tecnologías:
@@ -25,47 +24,48 @@ import Card from "../components/card.astro";
     </div>
   </section>
 
-  <section>
+<section>
+  <div class="relative bg-slate-900 py-10 px-6 overflow-hidden rounded-xl">
 
-    <div class="relative bg-slate-900 py-10 px-6 overflow-hidden rounded-xl">
+    <div class="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
 
-      <div class="pointer-events-none absolute left-20 top-0 h-full w-16 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-      <div class="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+    <div class="carousel-container overflow-hidden">
+      <div class="carousel-track flex items-center gap-5 animate-scroll">
+        <img src="/icons/blend.png" alt="Blend"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/krita.png" alt="Krita"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/inks.png" alt="Inkscape"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/figma.png" alt="Figma"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/godot.png" alt="Godot"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/ps.png" alt="ps" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
 
-      <div class="carousel-container overflow-hidden">
-        <div class="carousel-track flex items-center gap-5 animate-scroll">
-          <img src="/icons/blend.png" alt="Blend" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/krita.png" alt="Krita" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/inks.png" alt="Inkscape" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/figma.png" alt="Figma" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/godot.png" alt="Godot" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-
-          <img src="/icons/blend.png" alt="Blend" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/krita.png" alt="Krita" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/inks.png" alt="Inkscape" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/figma.png" alt="Figma" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-          <img src="/icons/godot.png" alt="Godot" class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
-        </div>
+        <img src="/icons/blend.png" alt="Blend"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/krita.png" alt="Krita"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/inks.png" alt="Inkscape"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/figma.png" alt="Figma"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/godot.png" alt="Godot"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
+        <img src="/icons/ps.png" alt="ps"class="h-16 w-auto object-contain opacity-100 hover:scale-110 transition-transform duration-300" />
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
+
 </div>
 
 <style>
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-80%); }
   }
 
   .carousel-container {
-    max-width: 70%;       /* Limita el ancho al contenedor padre */
+    max-width: 100%;       /* Limita el ancho al contenedor padre */
     margin: 0 auto;        /* Centrado horizontal */
   }
 
   .carousel-track {
     display: flex;
     width: 200%;           /* Contiene los 2 bloques del carrusel */
-    animation: scroll 20s linear infinite;
+    animation: scroll 10s linear infinite;
   }
 </style>
