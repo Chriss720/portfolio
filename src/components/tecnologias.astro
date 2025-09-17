@@ -59,13 +59,21 @@ import Card from "../components/card.astro";
   }
 
   .carousel-container {
-    max-width: 100%;       /* Limita el ancho al contenedor padre */
-    margin: 0 auto;        /* Centrado horizontal */
+    max-width: 100%;
+    overflow: hidden;   /* Oculta lo que se sale */
+    margin: 0 auto;
   }
 
   .carousel-track {
     display: flex;
-    width: 200%;           /* Contiene los 2 bloques del carrusel */
-    animation: scroll 10s linear infinite;
+    width: max-content;   /* Se ajusta al contenido duplicado */
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Ajuste en móvil: animación más lenta */
+  @media (max-width: 640px) {
+    .carousel-track {
+      animation-duration: 40s;
+    }
   }
 </style>
