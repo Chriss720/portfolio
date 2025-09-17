@@ -67,6 +67,7 @@ import ProjectCard from "../components/proyect-card.astro";
                 title="SIM CLE"
                 image="/projects/cle.png"
                 description="I'm currently involved in the development of a management system for students, teachers, and staff for the CLE at the Instituto Tecnológico de Morelia."
+                url="https://sim-cle.morelia.tecnm.mx/login"
               />
             </div>
             <div class="project-slide absolute w-[28rem] sm:w-[32rem] transition-transform duration-500 hidden">
@@ -74,6 +75,7 @@ import ProjectCard from "../components/proyect-card.astro";
                 title="Modulo vinculación para SIM-TECNM"
                 image="/projects/vin.png"
                 description="Project that connects students with companies for internships, developed with Laravel and Tailwind CSS."
+                url="https://vinculacion-proyecto-avbzd4.laravel.cloud"
               />
             </div>
           </div>
@@ -83,8 +85,39 @@ import ProjectCard from "../components/proyect-card.astro";
         </div>
       </section>
 
+      <section id="certificates" class="max-w-4xl mx-auto px-5 py-10">
+        <h2 class="text-3xl font-bold text-center mb-8">Certificates</h2>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+            <img src="/certificates/coursera.jpg" alt="Certificado Coursera" class="w-full h-64 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Google Project Management by Coursera</h3>
+              <a href="https://coursera.org/share/5067eda2d0eec79d6cbeb8e0e5a65ce5" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                View Certificate
+              </a>
+
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+            <img src="/certificates/js.jpg" alt="Certificado JavaScript" class="w-full h-64 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mastering JavaScript by IEEE</h3>
+              <a href="https://drive.google.com/file/d/17K30iYTNw3vXaBFJzV-kZ44uUfvcwSVx/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
 
